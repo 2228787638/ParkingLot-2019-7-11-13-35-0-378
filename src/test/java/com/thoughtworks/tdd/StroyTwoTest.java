@@ -23,4 +23,20 @@ public class StroyTwoTest {
         //then
         assertThat("Unrecognized parking ticket.", is(message));
     }
+    @Test
+    public void should__use_hava_used_ticket_can_return_unrecognized_mesage() {
+        //given
+        Car car =new Car();
+        ParkingBoy parkingBoy =new ParkingBoy();
+        ParkingLot parkingLot = new ParkingLot();
+        //when
+
+        Ticket ticket=parkingLot.createTicketByCar(car);
+        Car reFirstCar=parkingBoy.getCarByTicket(ticket);
+        String message=parkingBoy.searchMessageByTicket(ticket);
+
+        //then
+        assertThat(car, is(reFirstCar));
+        assertThat("Unrecognized parking ticket.", is(message));
+    }
 }
