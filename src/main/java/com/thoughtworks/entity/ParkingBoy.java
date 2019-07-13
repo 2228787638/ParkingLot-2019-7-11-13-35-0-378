@@ -21,4 +21,11 @@ public class ParkingBoy {
         return "Please provide your parking ticket.";
     }
 
+    public String searchMessageByCar(Car car){
+        if(parkingLot.createTicketByCar(car)==null){
+            return "Not enough position.";
+        }
+       return null;
+    }
+
 }

@@ -51,5 +51,20 @@ public class StroyTwoTest {
         assertThat("Please provide your parking ticket.", is(message));
     }
 
+    @Test
+    public void should_have_no_position_park_car_can_return_not_enough_position() {
+        //given
+        Car car =new Car();
+        ParkingBoy parkingBoy =new ParkingBoy();
+        ParkingLot parkingLot = new ParkingLot();
+        //when
+        for(int i=0;i<=10;i++) {
+            parkingLot.createTicketByCar(new Car());
+        }
+        String message=parkingBoy.searchMessageByCar(car);
+        //then
+        assertThat("Not enough position.", is(message));
+    }
+
 
 }
