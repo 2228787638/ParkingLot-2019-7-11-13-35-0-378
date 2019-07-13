@@ -17,5 +17,8 @@ public class ParkingBoy {
         }
         return null;
     }
+    public String searchMessageByTicket(){
+        return "Please provide your parking ticket.";
+    }
 
 }
