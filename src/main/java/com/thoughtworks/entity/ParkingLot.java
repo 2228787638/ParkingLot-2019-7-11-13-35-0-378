@@ -23,7 +23,9 @@ public class ParkingLot {
         return ticket;
     }
     public Car getCarByTicket(Ticket ticket){
-        return parkLot.get(ticket);
+        Car car = parkLot.get(ticket);
+        parkLot.remove(ticket);
+        return car;
     }
 
 }
