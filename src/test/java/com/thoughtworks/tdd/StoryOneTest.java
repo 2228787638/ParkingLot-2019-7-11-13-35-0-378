@@ -44,5 +44,19 @@ public class StoryOneTest {
         assertThat(reFirstCar, is(firstCar));
         assertThat(reSecondCar, is(secondCar));
     }
+    @Test
+    public void should__use_wrong_ticket_fetch_car() {
+        //given
+        Car car =new Car();
+        ParkingBoy parkingBoy =new ParkingBoy();
+        ParkingLot parkingLot = new ParkingLot();
+        //when
 
+        Ticket ticket=parkingLot.createTicketByCar(car);
+        Ticket wrongTicket=new Ticket();
+        Car reCar=parkingBoy.getCarByTicket(wrongTicket);
+
+        //then
+        assertThat(null, is(reCar));
+    }
 }
