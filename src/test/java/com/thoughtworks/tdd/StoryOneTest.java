@@ -26,4 +26,23 @@ public class StoryOneTest {
         //then
         assertThat(reCar, is(car));
     }
+    @Test
+    public void should_get_multiple_car_use_ticket_by_multiple_car() {
+        //given
+        Car firstCar =new Car();
+        Car secondCar =new Car();
+        ParkingBoy parkingBoy =new ParkingBoy();
+        ParkingLot parkingLot = new ParkingLot();
+        //when
+
+        Ticket firstTicket=parkingLot.createTicketByCar(firstCar);
+        Ticket secondTicket=parkingLot.createTicketByCar(secondCar);
+        Car reFirstCar=parkingBoy.getCarByTicket(firstTicket);
+        Car reSecondCar=parkingBoy.getCarByTicket(secondTicket);
+
+        //then
+        assertThat(reFirstCar, is(firstCar));
+        assertThat(reSecondCar, is(secondCar));
+    }
+
 }
