@@ -18,9 +18,13 @@ public class ParkingLot {
     }
 
     public Ticket createTicketByCar(Car car){
-        Ticket ticket= new Ticket();
-        parkLot.put(ticket,car);
-        return ticket;
+        if(parkLot.size()<=10) {
+            Ticket ticket = new Ticket();
+            parkLot.put(ticket, car);
+            return ticket;
+        }else{
+            return null;
+        }
     }
     public Car getCarByTicket(Ticket ticket){
         Car car = parkLot.get(ticket);

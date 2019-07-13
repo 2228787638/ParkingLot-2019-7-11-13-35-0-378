@@ -75,4 +75,20 @@ public class StoryOneTest {
         assertThat(car, is(reFirstCar));
         assertThat(null, is(reSecondCar));
     }
+    @Test
+    public void should_can_not_park_car_if_more_than_ten_car() {
+        //given
+        Car car =new Car();
+        ParkingBoy parkingBoy =new ParkingBoy();
+        ParkingLot parkingLot = new ParkingLot();
+        //when
+        for(int i=0;i<=10;i++) {
+            Ticket ticket = parkingLot.createTicketByCar(new Car());
+        }
+        //the 11 car
+        Ticket ticket = parkingLot.createTicketByCar(car);
+
+        //then
+        assertThat(null, is(ticket));
+    }
 }
