@@ -17,7 +17,7 @@ public class StroyTwoTest {
         ParkingBoy parkingBoy =new ParkingBoy();
         ParkingLot parkingLot = new ParkingLot();
         //when
-        Ticket ticket=parkingLot.createTicketByCar(car);
+        Ticket ticket=parkingBoy.returnTicketByCar(car);
         Ticket wrongTicket=new Ticket();
         String message=parkingBoy.searchMessageByTicket(wrongTicket);
         //then
@@ -31,7 +31,7 @@ public class StroyTwoTest {
         ParkingLot parkingLot = new ParkingLot();
         //when
 
-        Ticket ticket=parkingLot.createTicketByCar(car);
+        Ticket ticket=parkingBoy.returnTicketByCar(car);
         Car reFirstCar=parkingBoy.getCarByTicket(ticket);
         String message=parkingBoy.searchMessageByTicket(ticket);
 
@@ -59,7 +59,7 @@ public class StroyTwoTest {
         ParkingLot parkingLot = new ParkingLot();
         //when
         for(int i=0;i<=10;i++) {
-            parkingLot.createTicketByCar(new Car());
+            parkingBoy.returnTicketByCar(new Car());
         }
         String message=parkingBoy.searchMessageByCar(car);
         //then

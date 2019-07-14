@@ -20,7 +20,7 @@ public class StoryOneTest {
         ParkingLot parkingLot = new ParkingLot();
         //when
 
-        Ticket ticket=parkingLot.createTicketByCar(car);
+        Ticket ticket=parkingBoy.returnTicketByCar(car);
         Car reCar=parkingBoy.getCarByTicket(ticket);
 
         //then
@@ -35,8 +35,8 @@ public class StoryOneTest {
         ParkingLot parkingLot = new ParkingLot();
         //when
 
-        Ticket firstTicket=parkingLot.createTicketByCar(firstCar);
-        Ticket secondTicket=parkingLot.createTicketByCar(secondCar);
+        Ticket firstTicket=parkingBoy.returnTicketByCar(firstCar);
+        Ticket secondTicket=parkingBoy.returnTicketByCar(secondCar);
         Car reFirstCar=parkingBoy.getCarByTicket(firstTicket);
         Car reSecondCar=parkingBoy.getCarByTicket(secondTicket);
 
@@ -52,7 +52,7 @@ public class StoryOneTest {
         ParkingLot parkingLot = new ParkingLot();
         //when
 
-        Ticket ticket=parkingLot.createTicketByCar(car);
+        Ticket ticket=parkingBoy.returnTicketByCar(car);
         Ticket wrongTicket=new Ticket();
         Car reCar=parkingBoy.getCarByTicket(wrongTicket);
 
@@ -67,7 +67,7 @@ public class StoryOneTest {
         ParkingLot parkingLot = new ParkingLot();
         //when
 
-        Ticket ticket=parkingLot.createTicketByCar(car);
+        Ticket ticket=parkingBoy.returnTicketByCar(car);
         Car reFirstCar=parkingBoy.getCarByTicket(ticket);
         Car reSecondCar=parkingBoy.getCarByTicket(ticket);
 
@@ -83,10 +83,10 @@ public class StoryOneTest {
         ParkingLot parkingLot = new ParkingLot();
         //when
         for(int i=0;i<=10;i++) {
-            Ticket ticket = parkingLot.createTicketByCar(new Car());
+            Ticket ticket = parkingBoy.returnTicketByCar(new Car());
         }
         //the 11 car
-        Ticket ticket = parkingLot.createTicketByCar(car);
+        Ticket ticket = parkingBoy.returnTicketByCar(car);
 
         //then
         assertThat(null, is(ticket));
