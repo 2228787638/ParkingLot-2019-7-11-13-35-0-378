@@ -41,7 +41,7 @@ public class ParkingBoy {
     }
     public Ticket returnTicketByCar(Car car){
         for(ParkingLot parkingLot:parkingLotList) {
-            if (parkingLot.getParkLot().size() < 10) {
+            if (parkingLot.getParkLot().size() < parkingLot.getLotCount()) {
                 Ticket ticket = new Ticket();
                 parkingLot.getParkLot().put(ticket, car);
                 return ticket;

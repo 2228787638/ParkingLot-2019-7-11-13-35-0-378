@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class ParkingLot {
     private HashMap<Ticket,Car> parkLot;
-    private int lotCount;
+    private int lotCount=10;
 
     public HashMap<Ticket, Car> getParkLot() {
         return parkLot;

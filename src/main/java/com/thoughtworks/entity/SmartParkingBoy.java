@@ -16,7 +16,7 @@ public class SmartParkingBoy extends ParkingBoy{
             if(maxParkingLot==null) {
                 maxParkingLot = parkingLot;
             }
-            if(parkingLot.getParkLot().size() < 10&&parkingLot.getParkLot().size() <= maxParkingLot.getParkLot().size()){
+            if(parkingLot.getParkLot().size() < parkingLot.getLotCount()&&parkingLot.getParkLot().size() <= maxParkingLot.getParkLot().size()){
                 maxParkingLot=parkingLot;
             }
         }
