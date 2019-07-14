@@ -60,4 +60,22 @@ public class StorySixTest {
         assertThat("Unrecognized parking ticket.", is(parkingManager.getMessage()));
 
     }
+    @Test
+    public void should_use_hava_used_ticket_can_return_unrecognized_mesage_by_manager_tells_boy() {
+        //given
+        ParkingManager parkingManager = new ParkingManager();
+        ParkingBoy parkingBoy = new ParkingBoy();
+        //添加parkingboy到管理列表
+        parkingManager.getParkingBoys().add(parkingBoy);
+        Car car = new Car();
+        //when
+        //use wrong ticket to fetch car
+        Ticket ticket=parkingBoy.returnTicketByCar(car);
+        Car reFirstCar=parkingManager.getParkingBoys().get(0).getCarByTicket(ticket);
+        String message=parkingManager.getParkingBoys().get(0).searchMessageByTicket(ticket);
+        parkingManager.setMessage(message);
+        //then
+        //use wrong ticket to fetch car
+        assertThat("Unrecognized parking ticket.", is(parkingManager.getMessage()));
+    }
 }
