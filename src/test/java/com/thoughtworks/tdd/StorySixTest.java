@@ -26,4 +26,17 @@ public class StorySixTest {
         //then
         assertThat(reCar, is(car));
     }
+    @Test
+    public void should_can_park_and_fetch_car_by_manager() {
+        //given
+        ParkingManager parkingManager = new ParkingManager();
+        Car car = new Car();
+        //when
+        //parkingManager停车
+        Ticket ticket=parkingManager.returnTicketByCar(car);
+        //parkingManager取车
+        Car reCar = parkingManager.getCarByTicket(ticket);
+        //then
+        assertThat(reCar, is(car));
+    }
 }
