@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingBoy {
-    private List<ParkingLot> parkingLotList;
-    private String message;
+    protected List<ParkingLot> parkingLotList;
+    protected String message;
     public ParkingBoy() {
         parkingLotList=new ArrayList<>();
         parkingLotList.add(new ParkingLot());
