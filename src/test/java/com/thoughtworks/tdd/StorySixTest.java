@@ -93,4 +93,22 @@ public class StorySixTest {
         //use wrong ticket to fetch car
         assertThat("Please provide your parking ticket.", is(parkingManager.getMessage()));
     }
+    @Test
+    public void should_have_no_position_can_return_not_enough_position_by_manager_tells_boy() {
+        //given
+        ParkingManager parkingManager = new ParkingManager();
+        ParkingBoy parkingBoy = new ParkingBoy();
+        //添加parkingboy到管理列表
+        parkingManager.getParkingBoys().add(parkingBoy);
+        Car car = new Car();
+        //when
+        for(int i=0;i<10;i++) {
+            parkingManager.getParkingBoys().get(0).returnTicketByCar(new Car());
+        }
+        String message=parkingManager.getParkingBoys().get(0).searchMessageByCar(car);
+        parkingManager.setMessage(message);
+        //then
+        //use wrong ticket to fetch car
+        assertThat("Not enough position.", is(parkingManager.getMessage()));
+    }
 }
