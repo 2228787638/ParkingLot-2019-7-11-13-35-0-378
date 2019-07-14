@@ -39,4 +39,25 @@ public class StorySixTest {
         //then
         assertThat(reCar, is(car));
     }
+    @Test
+    public void should_return_message_can_use_wrong_ticket_by_manager_tells_boy() {
+        //given
+        ParkingManager parkingManager = new ParkingManager();
+        ParkingBoy parkingBoy = new ParkingBoy();
+        //添加parkingboy到管理列表
+        parkingManager.getParkingBoys().add(parkingBoy);
+        Car car = new Car();
+        //when
+        //use wrong ticket to fetch car
+        //parkingManager指定parkingboy停车
+        Ticket ticket=parkingManager.getParkingBoys().get(0).returnTicketByCar(car);
+        Ticket wrongTicket=new Ticket();
+        //parkingManager指定parkingboy取车.use wrong ticket
+        String message = parkingManager.getParkingBoys().get(0).searchMessageByTicket(wrongTicket);
+        parkingManager.setMessage(message);
+        //then
+        //use wrong ticket to fetch car
+        assertThat("Unrecognized parking ticket.", is(parkingManager.getMessage()));
+
+    }
 }
